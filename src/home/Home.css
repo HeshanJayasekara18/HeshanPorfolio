@@ -130,7 +130,6 @@
 }
 
 .animated-text {
-  
   background: linear-gradient(45deg, #F472B6, #A78BFA, #60A5FA);
   background-clip: text;
   color: transparent;
@@ -231,7 +230,7 @@
 /* Tech Stack */
 .tech-stack {
   margin-bottom: 2rem;
-  position: relative; /* Added for absolute positioning of image */
+  position: relative;
 }
 
 .tech-label {
@@ -392,13 +391,16 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-/* 3D Model Container - EXTREME MAXIMIZED */
+/* 3D Model Container - OPTIMIZED FOR ALL DEVICES */
 .model-container {
   position: relative;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   min-height: 100vh;
   border-radius: 0;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .spline-wrapper {
@@ -445,47 +447,49 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 2000px; /* Much increased perspective for better 3D effect */
+  perspective: 1000px;
 }
 
 .fallback-object {
   position: relative;
-  width: 90vw; /* 90% of viewport width */
-  height: 90vh; /* 90% of viewport height */
-  max-width: 1200px; /* Maximum size cap */
-  max-height: 1200px; /* Maximum size cap */
+  width: 280px;
+  height: 280px;
   transform-style: preserve-3d;
   animation: rotate3d 15s infinite linear;
   will-change: transform;
+  transform: translateZ(0);
 }
 
 .fallback-face {
   position: absolute;
-  width: 100%; /* Fill the entire fallback-object */
-  height: 100%; /* Fill the entire fallback-object */
+  width: 280px;
+  height: 280px;
   background: linear-gradient(45deg, rgba(124, 58, 237, 0.8), rgba(236, 72, 153, 0.6));
   border: 3px solid rgba(167, 139, 250, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20vw; /* Responsive font size based on viewport width */
+  font-size: 4rem;
   backdrop-filter: blur(8px);
   border-radius: 1rem;
   box-shadow: 0 0 50px rgba(124, 58, 237, 0.5);
   transition: all 0.3s ease;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  text-rendering: optimizeLegibility;
 }
 
 .fallback-face:hover {
-  box-shadow: 0 0 50px rgba(124, 58, 237, 0.5);
+  box-shadow: 0 0 70px rgba(124, 58, 237, 0.7);
 }
 
-/* Dynamic face positions based on the cube size */
-.fallback-face.front { transform: rotateY(0deg) translateZ(45vw); }
-.fallback-face.back { transform: rotateY(180deg) translateZ(45vw); }
-.fallback-face.right { transform: rotateY(90deg) translateZ(45vw); }
-.fallback-face.left { transform: rotateY(-90deg) translateZ(45vw); }
-.fallback-face.top { transform: rotateX(90deg) translateZ(45vh); }
-.fallback-face.bottom { transform: rotateX(-90deg) translateZ(45vh); }
+/* Cube face positions - using fixed translateZ values */
+.fallback-face.front { transform: rotateY(0deg) translateZ(140px); }
+.fallback-face.back { transform: rotateY(180deg) translateZ(140px); }
+.fallback-face.right { transform: rotateY(90deg) translateZ(140px); }
+.fallback-face.left { transform: rotateY(-90deg) translateZ(140px); }
+.fallback-face.top { transform: rotateX(90deg) translateZ(140px); }
+.fallback-face.bottom { transform: rotateX(-90deg) translateZ(140px); }
 
 @keyframes rotate3d {
   0% { transform: rotateX(0deg) rotateY(0deg); }
@@ -495,10 +499,9 @@
   100% { transform: rotateX(360deg) rotateY(360deg); }
 }
 
-/* Optional: Scale animation on hover for even more impact */
 .fallback-object:hover {
   animation-play-state: paused;
-  transform: scale(1.1);
+  transform: scale(1.05) translateZ(0);
   transition: transform 0.3s ease;
 }
 
@@ -512,6 +515,7 @@
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   font-size: 0.8rem;
+  z-index: 10;
 }
 
 /* Floating Elements */
@@ -625,8 +629,6 @@
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(-10px); }
 }
-
-
 
 /* Featured Work Section */
 .work-section {
@@ -742,149 +744,50 @@
   color: #A78BFA;
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-  .nav-links {
-    display: flex;
-  }
-  
-  .nav-links.open {
-    display: flex;
-    position: static;
-    background: none;
-    backdrop-filter: none;
-    padding: 0;
-  }
-  
-  .mobile-menu-btn {
-    display: none;
-  }
-  
-  .hero-title {
-    font-size: 3rem;
-  }
-  
-  .hero-greeting {
-    font-size: 1.2rem;
-  }
-  
-  .hero-description {
-    font-size: 1.1rem;
-  }
-  
-  .stats-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .work-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero-buttons {
-    flex-wrap: nowrap;
-  }
-
-  /* 3D Model - Medium screens */
+/* Mobile Optimization (up to 480px) */
+@media (max-width: 480px) {
   .model-container {
-    height: 100vh; /* Full viewport height */
-    min-height: 100vh;
-  }
-
-  .fallback-object {
-    width: 85vw; /* Slightly smaller on medium screens */
-    height: 85vh;
-    max-width: 1000px;
-    max-height: 1000px;
-  }
-
-  .fallback-face {
-    font-size: 18vw; /* Slightly smaller responsive font */
-  }
-
-  /* Updated face positions for medium screens */
-  .fallback-face.front { transform: rotateY(0deg) translateZ(42.5vw); }
-  .fallback-face.back { transform: rotateY(180deg) translateZ(42.5vw); }
-  .fallback-face.right { transform: rotateY(90deg) translateZ(42.5vw); }
-  .fallback-face.left { transform: rotateY(-90deg) translateZ(42.5vw); }
-  .fallback-face.top { transform: rotateX(90deg) translateZ(42.5vh); }
-  .fallback-face.bottom { transform: rotateX(-90deg) translateZ(42.5vh); }
-
-  .tech-icons {
-    gap: 2rem;
-  }
-
-  .tech-item {
+    height: 60vh;
+    min-height: 400px;
     padding: 1rem;
   }
 
-  /* Profile image responsive sizing for medium screens */
-  .profile-image-container {
-    width: 140px;
-    height: 140px;
-    bottom: -1.5rem;
+  .fallback-3d {
+    perspective: 800px;
   }
-}
 
-@media (min-width: 1024px) {
-  .hero-container {
-    grid-template-columns: 25fr 25fr;
-    gap: 4rem;
-  }
-  
-  /* 3D Model - Large screens */
-  .model-container {
-    height: 100vh; /* Full viewport height */
-    min-height: 100vh;
-  }
-  
   .fallback-object {
-    width: 80vw; /* 80% of viewport width on large screens */
-    height: 80vh; /* 80% of viewport height */
-    max-width: 1400px; /* Increased maximum size */
-    max-height: 1400px;
+    width: 200px;
+    height: 200px;
+    animation-duration: 20s;
   }
 
   .fallback-face {
-    font-size: 15vw; /* Large responsive font size */
+    width: 200px;
+    height: 200px;
+    font-size: 2.5rem;
+    border-width: 2px;
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.4);
   }
 
-  /* Updated face positions for large screens */
-  .fallback-face.front { transform: rotateY(0deg) translateZ(40vw); }
-  .fallback-face.back { transform: rotateY(180deg) translateZ(40vw); }
-  .fallback-face.right { transform: rotateY(90deg) translateZ(40vw); }
-  .fallback-face.left { transform: rotateY(-90deg) translateZ(40vw); }
-  .fallback-face.top { transform: rotateX(90deg) translateZ(40vh); }
-  .fallback-face.bottom { transform: rotateX(-90deg) translateZ(40vh); }
-  
-  .hero-title {
-    font-size: 3.5rem;
-  }
-  
-  .hero-greeting {
-    font-size: 1.3rem;
-  }
-  
-  .hero-description {
-    font-size: 1.2rem;
-  }
-  
-  .work-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .fallback-face:hover {
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.6);
   }
 
-  .tech-icons {
-    gap: 2.5rem;
+  .fallback-face.front { transform: rotateY(0deg) translateZ(100px); }
+  .fallback-face.back { transform: rotateY(180deg) translateZ(100px); }
+  .fallback-face.right { transform: rotateY(90deg) translateZ(100px); }
+  .fallback-face.left { transform: rotateY(-90deg) translateZ(100px); }
+  .fallback-face.top { transform: rotateX(90deg) translateZ(100px); }
+  .fallback-face.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+  .error-indicator {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    top: 0.5rem;
+    right: 0.5rem;
   }
 
-  /* Profile image responsive sizing for large screens */
-  .profile-image-container {
-    width: 160px;
-    height: 160px;
-    bottom: -2rem;
-  }
-}
-
-@media (max-width: 767px) {
   .hero-buttons {
     flex-direction: column;
     align-items: stretch;
@@ -926,45 +829,399 @@
     height: 1.2rem;
   }
 
-  /* Profile image responsive sizing for mobile */
   .profile-image-container {
     width: 100px;
     height: 100px;
     bottom: -0.5rem;
-    right: -0.5rem; /* Slightly outside container on mobile */
+    right: -0.5rem;
+  }
+}
+
+/* Tablet Portrait (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .model-container {
+    height: 70vh;
+    min-height: 500px;
+    padding: 1.5rem;
   }
 
-  /* 3D Model - Mobile */
-  .model-container {
-    height: 100vh; /* Full viewport height on mobile too */
-    min-height: 100vh;
+  .fallback-3d {
+    perspective: 900px;
   }
 
   .fallback-object {
-    width: 95vw; /* Almost full width on mobile */
-    height: 70vh; /* Most of viewport height */
-    max-width: 600px; /* Reasonable maximum for mobile */
-    max-height: 600px;
+    width: 240px;
+    height: 240px;
+    animation-duration: 18s;
   }
 
   .fallback-face {
-    font-size: 25vw; /* Very large font on mobile */
+    width: 240px;
+    height: 240px;
+    font-size: 3rem;
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
   }
 
-  /* Updated face positions for mobile */
-  .fallback-face.front { transform: rotateY(0deg) translateZ(47.5vw); }
-  .fallback-face.back { transform: rotateY(180deg) translateZ(47.5vw); }
-  .fallback-face.right { transform: rotateY(90deg) translateZ(47.5vw); }
-  .fallback-face.left { transform: rotateY(-90deg) translateZ(47.5vw); }
-  .fallback-face.top { transform: rotateX(90deg) translateZ(35vh); }
-  .fallback-face.bottom { transform: rotateX(-90deg) translateZ(35vh); }
+  .fallback-face:hover {
+    box-shadow: 0 0 50px rgba(124, 58, 237, 0.6);
+  }
+
+  .fallback-face.front { transform: rotateY(0deg) translateZ(120px); }
+  .fallback-face.back { transform: rotateY(180deg) translateZ(120px); }
+  .fallback-face.right { transform: rotateY(90deg) translateZ(120px); }
+  .fallback-face.left { transform: rotateY(-90deg) translateZ(120px); }
+  .fallback-face.top { transform: rotateX(90deg) translateZ(120px); }
+  .fallback-face.bottom { transform: rotateX(-90deg) translateZ(120px); }
+
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-links.open {
+    display: flex;
+    position: static;
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+  }
+  
+  .mobile-menu-btn {
+    display: none;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-greeting {
+    font-size: 1.2rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-buttons {
+    flex-wrap: nowrap;
+  }
+
+  .tech-icons {
+    gap: 2rem;
+  }
+
+  .tech-item {
+    padding: 1rem;
+  }
+
+  .profile-image-container {
+    width: 140px;
+    height: 140px;
+    bottom: -1.5rem;
+  }
+}
+
+/* Tablet Landscape (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .model-container {
+    height: 80vh;
+    min-height: 600px;
+    padding: 2rem;
+  }
+
+  .fallback-3d {
+    perspective: 1200px;
+  }
+
+  .fallback-object {
+    width: 320px;
+    height: 320px;
+    animation-duration: 16s;
+  }
+
+  .fallback-face {
+    width: 320px;
+    height: 320px;
+    font-size: 4.5rem;
+    box-shadow: 0 0 45px rgba(124, 58, 237, 0.5);
+  }
+
+  .fallback-face:hover {
+    box-shadow: 0 0 60px rgba(124, 58, 237, 0.7);
+  }
+
+  .fallback-face.front { transform: rotateY(0deg) translateZ(160px); }
+  .fallback-face.back { transform: rotateY(180deg) translateZ(160px); }
+  .fallback-face.right { transform: rotateY(90deg) translateZ(160px); }
+  .fallback-face.left { transform: rotateY(-90deg) translateZ(160px); }
+  .fallback-face.top { transform: rotateX(90deg) translateZ(160px); }
+  .fallback-face.bottom { transform: rotateX(-90deg) translateZ(160px); }
+
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-greeting {
+    font-size: 1.3rem;
+  }
+  
+  .hero-description {
+    font-size: 1.2rem;
+  }
+  
+  .work-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tech-icons {
+    gap: 2.5rem;
+  }
+
+  .profile-image-container {
+    width: 160px;
+    height: 160px;
+    bottom: -2rem;
+  }
+}
+
+/* Desktop (1025px and up) */
+@media (min-width: 1025px) {
+  .model-container {
+    height: 100vh;
+    min-height: 700px;
+  }
+
+  .fallback-3d {
+    perspective: 1500px;
+  }
+
+  .fallback-object {
+    width: 380px;
+    height: 380px;
+    animation-duration: 15s;
+  }
+
+  .fallback-face {
+    width: 380px;
+    height: 380px;
+    font-size: 5rem;
+    box-shadow: 0 0 50px rgba(124, 58, 237, 0.5);
+  }
+
+  .fallback-face:hover {
+    box-shadow: 0 0 70px rgba(124, 58, 237, 0.7);
+  }
+
+  .fallback-face.front { transform: rotateY(0deg) translateZ(190px); }
+  .fallback-face.back { transform: rotateY(180deg) translateZ(190px); }
+  .fallback-face.right { transform: rotateY(90deg) translateZ(190px); }
+  .fallback-face.left { transform: rotateY(-90deg) translateZ(190px); }
+  .fallback-face.top { transform: rotateX(90deg) translateZ(190px); }
+  .fallback-face.bottom { transform: rotateX(-90deg) translateZ(190px); }
+
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-greeting {
+    font-size: 1.3rem;
+  }
+  
+  .hero-description {
+    font-size: 1.2rem;
+  }
+  
+  .work-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tech-icons {
+    gap: 2.5rem;
+  }
+
+  .profile-image-container {
+    width: 160px;
+    height: 160px;
+    bottom: -2rem;
+  }
+}
+
+/* Large Desktop (1441px and up) */
+@media (min-width: 1441px) {
+  .fallback-object {
+    width: 450px;
+    height: 450px;
+  }
+
+  .fallback-face {
+    width: 450px;
+    height: 450px;
+    font-size: 6rem;
+  }
+
+  .fallback-face.front { transform: rotateY(0deg) translateZ(225px); }
+  .fallback-face.back { transform: rotateY(180deg) translateZ(225px); }
+  .fallback-face.right { transform: rotateY(90deg) translateZ(225px); }
+  .fallback-face.left { transform: rotateY(-90deg) translateZ(225px); }
+  .fallback-face.top { transform: rotateX(90deg) translateZ(225px); }
+  .fallback-face.bottom { transform: rotateX(-90deg) translateZ(225px); }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .model-container {
+    height: 80vh;
+    min-height: 300px;
+  }
+  
+  .fallback-object {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .fallback-face {
+    width: 220px;
+    height: 220px;
+    font-size: 2.8rem;
+  }
+  
+  .fallback-face.front { transform: rotateY(0deg) translateZ(110px); }
+  .fallback-face.back { transform: rotateY(180deg) translateZ(110px); }
+  .fallback-face.right { transform: rotateY(90deg) translateZ(110px); }
+  .fallback-face.left { transform: rotateY(-90deg) translateZ(110px); }
+  .fallback-face.top { transform: rotateX(90deg) translateZ(110px); }
+  .fallback-face.bottom { transform: rotateX(-90deg) translateZ(110px); }
+}
+
+/* High-DPI displays optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .fallback-face {
+    border-width: 2px;
+  }
+  
+  .fallback-object {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .fallback-object:hover {
+    transform: none;
+    transition: none;
+  }
+  
+  .fallback-face:hover {
+    box-shadow: 0 0 50px rgba(124, 58, 237, 0.5);
+  }
+  
+  .fallback-object:active {
+    transform: scale(0.95) translateZ(0);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Performance optimizations for older devices */
+@media (max-width: 768px) {
+  .fallback-object {
+    will-change: transform;
+    transform-origin: center center;
+  }
+  
+  .fallback-face {
+    will-change: auto;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-origin: center center;
+  }
 }
 
 /* Reduced Motion Preference */
 @media (prefers-reduced-motion: reduce) {
-  .fallback-object, .floating-element, .bg-blob-1, .bg-blob-2, .scroll-indicator, .scroll-dot, .tech-item {
+  .fallback-object, 
+  .floating-element, 
+  .bg-blob-1, 
+  .bg-blob-2, 
+  .scroll-indicator, 
+  .scroll-dot, 
+  .tech-item {
     animation: none !important;
+  }
+  
+  .fallback-object:hover {
     transform: none !important;
+  }
+  
+  .fallback-face {
+    transition: none !important;
   }
 }
 
+/* Additional responsive fixes */
+@media (max-width: 767px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-model {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .animated-text {
+    font-size: 1.8rem;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+  .fallback-object {
+    width: 500px;
+    height: 500px;
+  }
+
+  .fallback-face {
+    width: 500px;
+    height: 500px;
+    font-size: 7rem;
+  }
+
+  .fallback-face.front { transform: rotateY(0deg) translateZ(250px); }
+  .fallback-face.back { transform: rotateY(180deg) translateZ(250px); }
+  .fallback-face.right { transform: rotateY(90deg) translateZ(250px); }
+  .fallback-face.left { transform: rotateY(-90deg) translateZ(250px); }
+  .fallback-face.top { transform: rotateX(90deg) translateZ(250px); }
+  .fallback-face.bottom { transform: rotateX(-90deg) translateZ(250px); }
+}
+
+/* Print styles */
+@media print {
+  .fallback-object {
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .floating-element,
+  .bg-effects {
+    display: none;
+  }
+}

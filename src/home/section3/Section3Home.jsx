@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './Section3Home.css';
 import projectLandry from "../../images/projectLandry.png"
 
-
 const Section3Home = () => {
   // Project data - easy to add new projects here
   const projects = [
@@ -12,7 +11,7 @@ const Section3Home = () => {
       tech: "MEAN Stack",
       icon: "👕",
       description: "A comprehensive laundry management system with user authentication, order tracking, and payment integration. Features real-time notifications and admin dashboard.",
-      image: {projectLandry}, // Add image URL when available
+      image: projectLandry, // Fixed: Remove curly braces
       technologies: ["MongoDB", "Express.js", "React", "Node.js"],
       demoUrl: "#",
       githubUrl: "#",
@@ -76,9 +75,19 @@ const Section3Home = () => {
                       src={project.image} 
                       alt={project.title}
                       className="work-card-photo"
+                      onError={(e) => {
+                        console.error('Image failed to load:', project.image);
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
                     />
                   ) : (
                     <div className="work-card-placeholder">
+                      <span className="work-card-icon">{project.icon}</span>
+                    </div>
+                  )}
+                  {project.image && (
+                    <div className="work-card-placeholder" style={{display: 'none'}}>
                       <span className="work-card-icon">{project.icon}</span>
                     </div>
                   )}
@@ -141,9 +150,19 @@ const Section3Home = () => {
                   src={selectedProject.image} 
                   alt={selectedProject.title}
                   className="modal-photo"
+                  onError={(e) => {
+                    console.error('Modal image failed to load:', selectedProject.image);
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
                 />
               ) : (
                 <div className="modal-placeholder">
+                  <span className="modal-icon">{selectedProject.icon}</span>
+                </div>
+              )}
+              {selectedProject.image && (
+                <div className="modal-placeholder" style={{display: 'none'}}>
                   <span className="modal-icon">{selectedProject.icon}</span>
                 </div>
               )}
