@@ -1,1 +1,1 @@
-"# HeshanPorfolio" 
+A modern, responsive portfolio website built with React showcasing my journey as a software developer. Features include project galleries, skill demonstrations, interactive components, and a clean, professional design. The site is optimized for performance and accessibility, with smooth animations and mobile-first responsive design.
