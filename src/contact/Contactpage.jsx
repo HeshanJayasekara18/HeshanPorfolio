@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
+// Remove React Router imports for hash navigation
+// import { Link, useNavigate } from 'react-router-dom';
 
 const ContactPage = () => {
+  // const navigate = useNavigate(); // Remove this for hash navigation
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -645,11 +648,29 @@ const ContactPage = () => {
       {/* Navigation */}
       <nav className="navbar">
         <div className="navbar-container">
-          <a href="/#/" className="logo">Heshan Jayasekara</a>
+          <a href="#/" className="logo">Heshan Jayasekara</a>
           <div className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
-            <a href="/#/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
-            <a href="/#/about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</a>
-            <a href="/#/contact" className="nav-link active" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+            <a 
+              href="#/" 
+              className="nav-link" 
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </a>
+            <a 
+              href="#/about" 
+              className="nav-link" 
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </a>
+            <a 
+              href="#/contact" 
+              className="nav-link active" 
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
+            </a>
           </div>
           <button
             className="mobile-menu-btn"
