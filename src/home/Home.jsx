@@ -129,10 +129,10 @@
             <div className="navbar-container">
               <div className="logo">Heshan Jayasekara</div>
               <div className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
-                <a href="#home" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+                <a href="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
                 <Link to="/about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</Link>                
                 {/* <a href="#projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Projects</a> */}
-                <a href="#/contact" className="nav-link">Contact</a>         
+                <a href="/contact" className="nav-link">Contact</a>         
                 </div>
               <button
                 className="mobile-menu-btn"
