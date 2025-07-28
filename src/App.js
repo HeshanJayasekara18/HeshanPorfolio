@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Route ,Routes ,Navigate} from 'react-router-dom';
+import { HashRouter,BrowserRouter, Route ,Routes ,Navigate} from 'react-router-dom';
 import Home from './home/Home';
 import About from './about/About';
-import Contact from './contact/Contactpage.jsx';
+import Contact from './contact/Contactpage';
 
 function App() {
   return (
