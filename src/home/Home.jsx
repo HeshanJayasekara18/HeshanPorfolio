@@ -4,6 +4,8 @@
     import Spline from '@splinetool/react-spline';
     import HomeSection2 from './section2/HomeSection2.jsx';
     import Section3Home from './section3/Section3Home.jsx';
+   
+    import { Link } from 'react-router-dom';
 
     const Model3D = ({ mousePosition }) => {
       const [isLoaded, setIsLoaded] = useState(false);
@@ -127,7 +129,7 @@
               <div className="logo">Heshan Jayasekara</div>
               <div className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
                 <a href="#home" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
-                <a href="#about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</a>
+                <Link to="/about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</Link>                
                 <a href="#projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
                 <a href="#contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
               </div>
