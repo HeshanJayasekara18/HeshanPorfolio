@@ -4,6 +4,7 @@
     import Spline from '@splinetool/react-spline';
     import HomeSection2 from './section2/HomeSection2.jsx';
     import Section3Home from './section3/Section3Home.jsx';
+    import Contactpage from '../contact/Contactpage.jsx';
    
     import { Link } from 'react-router-dom';
 
@@ -130,8 +131,8 @@
               <div className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
                 <a href="#home" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
                 <Link to="/about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</Link>                
-                <a href="#projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
-                <a href="#contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+                {/* <a href="#projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Projects</a> */}
+                <a href="/contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
               </div>
               <button
                 className="mobile-menu-btn"

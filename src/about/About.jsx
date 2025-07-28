@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import myImg from '../images/my img2.jpg'; // Renamed to avoid spaces in file name
 import { throttle } from 'lodash'; // Optional: Install lodash for throttling
 
+
 const About = () => {
   const [scrollY, setScrollY] = useState(0);
   const [activeSkill, setActiveSkill] = useState(null);
@@ -104,16 +105,16 @@ const About = () => {
             >
               About
             </a>
-            <a
+            {/* <a
               href="#projects"
               style={styles.navLink}
               onClick={() => setIsMobileMenuOpen(false)}
               aria-label="Projects"
             >
               Projects
-            </a>
+            </a> */}
             <a
-              href="#contact"
+              href="/contact"
               style={styles.navLink}
               onClick={() => setIsMobileMenuOpen(false)}
               aria-label="Contact"
