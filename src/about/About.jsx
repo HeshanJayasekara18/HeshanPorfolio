@@ -114,7 +114,7 @@ const About = () => {
               Projects
             </a> */}
             <a
-              href="/#/contact"
+              href="/contact"
               style={styles.navLink}
               onClick={() => setIsMobileMenuOpen(false)}
               aria-label="Contact"
