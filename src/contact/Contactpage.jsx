@@ -1,37 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState('');
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      // Reset status after 3 seconds
-      setTimeout(() => setSubmitStatus(''), 3000);
-    }, 2000);
-  };
 
   const contactInfo = [
     {
@@ -146,6 +115,8 @@ const ContactPage = () => {
         <div className="contact-container">
           <div className="contact-grid">
             {/* Contact Information */}
+          <div className="contact-grid">
+            {/* Contact Information */}
             <div className="contact-info">
               <h2 className="contact-section-title">Let's Connect</h2>
               <p className="contact-section-description">
@@ -193,100 +164,53 @@ const ContactPage = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="contact-form-container">
-              <h2 className="contact-section-title">Send a Message</h2>
+            {/* Additional Contact Information */}
+            <div className="contact-additional">
+              <h2 className="contact-section-title">About My Work</h2>
               <p className="contact-section-description">
-                Have a project in mind? Drop me a message and let's discuss how we can work together.
+                I'm currently pursuing BSc (Hons) in Information Technology Specialising in Software Engineering at SLIIT. 
+                I'm passionate about creating innovative digital solutions and always excited to take on new challenges.
               </p>
 
-              <form className="contact-form" onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="name" className="form-label">Full Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="form-input"
-                    placeholder="Your full name"
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="email" className="form-label">Email Address</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="form-input"
-                    placeholder="your.email@example.com"
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="subject" className="form-label">Subject</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="form-input"
-                    placeholder="What's this about?"
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message" className="form-label">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="form-textarea"
-                    placeholder="Tell me about your project or just say hello..."
-                    rows="6"
-                    required
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className={`form-submit ${isSubmitting ? 'submitting' : ''}`}
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="spinner"></div>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <svg className="send-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                      </svg>
-                      Send Message
-                    </>
-                  )}
-                </button>
-
-                {submitStatus === 'success' && (
-                  <div className="form-success">
-                    <svg className="success-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Message sent successfully! I'll get back to you soon.
+              <div className="work-areas">
+                <h3 className="work-areas-title">Areas of Expertise</h3>
+                <div className="work-areas-grid">
+                  <div className="work-area-card">
+                    <div className="work-area-icon">💻</div>
+                    <h4 className="work-area-title">Full Stack Development</h4>
+                    <p className="work-area-description">Building complete web applications from frontend to backend</p>
                   </div>
-                )}
-              </form>
+                  <div className="work-area-card">
+                    <div className="work-area-icon">📱</div>
+                    <h4 className="work-area-title">Mobile Development</h4>
+                    <p className="work-area-description">Creating responsive and native mobile applications</p>
+                  </div>
+                  <div className="work-area-card">
+                    <div className="work-area-icon">🎨</div>
+                    <h4 className="work-area-title">UI/UX Design</h4>
+                    <p className="work-area-description">Designing intuitive and user-friendly interfaces</p>
+                  </div>
+                  <div className="work-area-card">
+                    <div className="work-area-icon">⚡</div>
+                    <h4 className="work-area-title">Performance Optimization</h4>
+                    <p className="work-area-description">Optimizing applications for speed and efficiency</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="availability">
+                <h3 className="availability-title">Current Availability</h3>
+                <div className="availability-status">
+                  <div className="status-indicator available"></div>
+                  <span className="status-text">Available for new projects and collaborations</span>
+                </div>
+                <p className="availability-description">
+                  I'm actively looking for internship opportunities and freelance projects. 
+                  Let's discuss how we can work together to bring your ideas to life.
+                </p>
+              </div>
             </div>
+          </div>
           </div>
         </div>
       </section>
