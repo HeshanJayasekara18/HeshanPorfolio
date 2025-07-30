@@ -7,75 +7,7 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Navigation */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 50;
-  background: rgba(15, 15, 35, 0.9);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
-}
 
-.navbar-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  background: linear-gradient(to right, #A78BFA, #F472B6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.nav-links {
-  display: none;
-  gap: 2rem;
-}
-
-.nav-links.open {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: rgba(15, 15, 35, 0.9);
-  backdrop-filter: blur(16px);
-  padding: 1rem;
-  text-align: center;
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #A78BFA;
-}
-
-.mobile-menu-btn {
-  display: block;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.social-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-}
 
 /* Hero Section */
 .hero-section {
@@ -93,7 +25,7 @@
   padding: 0 1.5rem;
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
+  align-items: normal;
   gap: 3rem;
 }
 
