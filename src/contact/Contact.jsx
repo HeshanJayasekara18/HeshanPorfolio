@@ -380,7 +380,7 @@ const Contact = () => {
   const styles = getStyles();
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container } id='contact'>
       <div style={styles.wrapper}>
         <div style={styles.card}>
           {/* Header */}
