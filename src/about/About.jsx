@@ -94,10 +94,7 @@ const About = () => {
                 My journey in technology started with curiosity and has evolved into a deep passion for full-stack 
                 development. I love tackling complex problems and turning creative ideas into functional, user-friendly applications.
               </p>
-              <p className="about-paragraph">
-                When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
-                or brainstorming the next big idea that could make a difference in people's lives.
-              </p>
+              
             </div>
 
             </div>
