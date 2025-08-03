@@ -555,23 +555,9 @@ const Contact = () => {
                     )}
                   </button>
 
-                  <button
-                    type="button"
-                    onClick={handleEmailSubmit}
-                    style={styles.emailBtn}
-                    onMouseEnter={(e) => {
-                      e.target.style.backgroundColor = 'rgba(124, 58, 237, 0.1)';
-                      e.target.style.borderColor = '#A78BFA';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.backgroundColor = 'transparent';
-                      e.target.style.borderColor = 'rgba(124, 58, 237, 0.5)';
-                    }}
-                  >
-                    <Mail size={18} />
-                    <span style={styles.emailBtnText}>Open Email Client</span>
-                    {isMobile && <span>Email</span>}
-                  </button>
+                  
+
+              
                 </div>
 
                 {status === 'success' && (

@@ -30,16 +30,7 @@ const NavBar = () => {
           >
             Home
           </a>
-          <a 
-            href="#about"
-            className="nav-link"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('about');
-            }}
-          >
-            About
-          </a>
+
           <a 
             href="#projects"
             className="nav-link"
@@ -50,6 +41,18 @@ const NavBar = () => {
           >
             Projects
           </a>
+          
+          <a 
+            href="#about"
+            className="nav-link"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('about');
+            }}
+          >
+            About
+          </a>
+          
           <a 
             href="#contact"
             className="nav-link"
