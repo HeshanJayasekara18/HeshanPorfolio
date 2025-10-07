@@ -5,13 +5,15 @@ import laundryprojectimg from '../../images/projectLandry.png';
 import TouristAndTraval from '../../images/TouristAndTraval.png';
 import portfolio from '../../images/portfolio.png';
 import echannel from '../../images/echannel.png';
+import clothingstore from '../../images/clothstore.png'
+
 
 const Section3Home = () => {
   // Project data
   const projects = [
     {
       id: 1,
-      title: "Online Laundry Management System",
+      title: "Online Laundry Management System - Individual Project",
       tech: "MERN Stack",
       icon: "👕",
       shortDescription: "A comprehensive laundry management system with user authentication, order tracking, and payment integration.",
@@ -22,6 +24,21 @@ const Section3Home = () => {
       githubUrl: "https://github.com/HeshanJayasekara18/DIRTYCLOTHS-Laundry-Project.git",
       status: "completed"
     },
+     {
+      id: 1,
+      title: "Online Clothing Store - Individual Project",
+      tech: ".Net Core, React",
+      icon: "👕",
+      shortDescription: "A comprehensive laundry management system with user authentication, order tracking, and payment integration.",
+      fullDescription: "Verve is a full-stack AI-powered online clothing store built with React (frontend) and ASP.NET Core (backend). It enables users to explore and purchase clothing items while offering secure Google authentication. The highlight feature is the AI Fashion Assistant powered by Google Gemini API — users can type natural prompts like 'I have a birthday party and need a frock, my size is XL', and the system intelligently suggests matching outfits. The backend is containerized using Docker and deployed on Microsoft Azure App Service via Azure Container Registry (ACR), while the frontend is hosted on Vercel. MongoDB Atlas is used for data storage, managing products, customers, and orders. This project showcases cloud deployment, AI-driven recommendations, and a scalable microservice architecture for a personalized e-commerce experience.",
+      image: clothingstore,
+      technologies: ["MongoDB", ".Net.Core", "React", "AZURE", "Docker", "Github"],
+      demoUrl: "https://online-clothing-store-umber.vercel.app/",
+      githubUrl: "https://github.com/HeshanJayasekara18/OnlineClothingStore.git",
+      status: "Ongoing"
+    },
+
+
     {
       id: 2,
       title: "Tourist Travel Management System",
