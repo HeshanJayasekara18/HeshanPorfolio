@@ -4,10 +4,17 @@ import './Home.css';
 import Spline from '@splinetool/react-spline';
 import HomeSection2 from './section2/HomeSection2.jsx';
 import Section3Home from './section3/Section3Home.jsx';
-
 import NavBar from '../nav-bar/NavBar.jsx';
 import AboutPage from '../about/About.jsx';
 import Contact from '../contact/Contact.jsx';
+import dockericon from '../images/tech_icons/dockerimg.png';
+import aspNetcoreicon from '../images/tech_icons/asp.netimg.png';
+import azureicon from '../images/tech_icons/azureimg.png';
+import htmlicon from '../images/tech_icons/htmlimg.png';
+import javaicon from '../images/tech_icons/javaimg.png';
+import nodejsicon from '../images/tech_icons/nodejsimg.png';
+import pythonicon from '../images/tech_icons/pythonimg.png';
+import reacticon from '../images/tech_icons/reactimg.png';
 
 const Model3D = ({ mousePosition }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -63,7 +70,6 @@ const Homepage = () => {
   const [scrollY, setScrollY] = useState(0);
   const [currentText, setCurrentText] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const animatedTexts = [
     "Undergraduate",
@@ -72,12 +78,14 @@ const Homepage = () => {
     "Problem Solver"
   ];
 
+  // Scroll handler
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Mouse move handler with debounce
   useEffect(() => {
     const handleMouseMove = debounce((e) => {
       const { clientX, clientY } = e;
@@ -86,6 +94,7 @@ const Homepage = () => {
       const y = -(clientY / innerHeight - 0.5) * 2;
       setMousePosition({ x, y });
     }, 100);
+    
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
@@ -93,6 +102,7 @@ const Homepage = () => {
     };
   }, []);
 
+  // Text animation with cleanup
   useEffect(() => {
     const interval = setInterval(() => {
       setIsTyping(false);
@@ -102,15 +112,17 @@ const Homepage = () => {
       }, 500);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [animatedTexts.length]);
 
   const techStack = [
-    { name: 'React', icon: '⚛️', color: '#61DAFB' },
-    { name: 'HTML', icon: '🌐', color: '#E34F26' },
-    { name: 'Java', icon: '☕', color: '#F89820' },
-    { name: 'Python', icon: '🐍', color: '#3776AB' },
-    { name: 'C++', icon: '⚡', color: '#00599C' },
-    { name: 'MEAN', icon: '🔥', color: '#4CAF50' }
+    { name: 'React', src: reacticon, color: '#61DAFB' },
+    { name: 'HTML', src: htmlicon, color: '#E34F26' },
+    { name: 'Java', src: javaicon, color: '#F89820' },
+    { name: 'Python', src: pythonicon, color: '#3776AB' },
+    { name: 'ASP.Net Core', src: aspNetcoreicon, color: '#00599C' },
+    { name: 'Node js', src: nodejsicon, color: '#4CAF50' },
+    { name: 'Docker', src: dockericon, color: '#2496ED' },
+    { name: 'Azure', src: azureicon, color: '#0089D6' }  
   ];
 
   const socialLinks = {
@@ -121,7 +133,7 @@ const Homepage = () => {
   };
 
   const downloadCV = () => {
-    window.open('https://drive.google.com/file/d/1JZyu1rA3XDNa95yYVRItf094Wx6BssKj/view?usp=sharing', 'Error! File not found');
+    window.open('https://drive.google.com/file/d/1JZyu1rA3XDNa95yYVRItf094Wx6BssKj/view?usp=sharing', '_blank');
   };
 
   return (
@@ -157,7 +169,7 @@ const Homepage = () => {
               <div className="tech-icons">
                 {techStack.map((tech, index) => (
                   <div key={tech.name} className="tech-item" style={{'--delay': `${index * 0.1}s`}}>
-                    <span className="tech-icon" style={{color: tech.color}}>{tech.icon}</span>
+                    <img src={tech.src} alt={tech.name} className="tech-icon" style={{borderColor: tech.color}} />
                     <span className="tech-name">{tech.name}</span>
                   </div>
                 ))}
@@ -217,8 +229,6 @@ const Homepage = () => {
           </div>
         </div>
       </section>
-      
-      {/* Fixed: Changed aboutpage to AboutPage with proper capitalization */}
       
       <HomeSection2 />
       <Section3Home />
