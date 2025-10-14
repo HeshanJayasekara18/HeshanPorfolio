@@ -121,7 +121,7 @@ const Homepage = () => {
   };
 
   const downloadCV = () => {
-    window.open('https://drive.google.com/file/d/1GurOKQGelhmZPxvpn9MEqarlwMZuHtpu/view?usp=sharing', 'Error! File not found');
+    window.open('https://drive.google.com/file/d/1JZyu1rA3XDNa95yYVRItf094Wx6BssKj/view?usp=sharing', 'Error! File not found');
   };
 
   return (
