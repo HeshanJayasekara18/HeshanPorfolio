@@ -75,7 +75,7 @@ const Section3Home = () => {
       image: dirtycloths,
       technologies: ["React", "HTML", "CSS", "JavaScript", "Netlify"],
       demoUrl: "https://dirtyclothslaundry-midigama.netlify.app/",
-      githubUrl: "#",
+      githubUrl: "https://github.com/HeshanJayasekara18/DITYCLOTHS_App.git",
       status: "in progress"
     },
 
