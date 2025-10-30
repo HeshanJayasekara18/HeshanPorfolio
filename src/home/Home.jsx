@@ -133,7 +133,7 @@ const Homepage = () => {
   };
 
   const downloadCV = () => {
-    window.open('https://drive.google.com/file/d/1JZyu1rA3XDNa95yYVRItf094Wx6BssKj/view?usp=sharing', '_blank');
+    window.open('https://drive.google.com/file/d/1vqvmlZUrCYWZiN1py2DcuruOdzZV3aET/view?usp=sharing', '_blank');
   };
 
   return (

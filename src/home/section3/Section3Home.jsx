@@ -6,7 +6,7 @@ import TouristAndTraval from '../../images/TouristAndTraval.png';
 import portfolio from '../../images/portfolio.png';
 import echannel from '../../images/echannel.png';
 import clothingstore from '../../images/clothstore.png'
-
+import dirtycloths from '../../images/dirtyclothshome.png';
 
 const Section3Home = () => {
   // Project data
@@ -67,6 +67,20 @@ const Section3Home = () => {
     },
     {
       id: 4,
+      title: "DirtyCloths Laundry Website",
+      tech: "React",
+      icon: "🧺",
+      shortDescription: "Modern business profile website for a laundry service, featuring a clean UI and responsive React design.",
+      fullDescription: "A professional business profile website developed for DirtyCloths Laundry using React. The site highlights the company’s premium laundry services, eco-friendly practices, and modern aesthetics. It includes sections such as Home, About, Services, and Contact, ensuring a seamless and responsive user experience. The project is hosted on Netlify for easy public access.",
+      image: dirtycloths,
+      technologies: ["React", "HTML", "CSS", "JavaScript", "Netlify"],
+      demoUrl: "https://dirtyclothslaundry-midigama.netlify.app/",
+      githubUrl: "#",
+      status: "in progress"
+    },
+
+    {
+      id: 5,
       title: "My Portfolio Website",
       tech: "React",
       icon: "🧑‍🦱",
