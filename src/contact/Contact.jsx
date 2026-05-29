@@ -108,7 +108,7 @@ const Contact = () => {
   const getStyles = () => ({
     container: {
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #0F172A 0%, #581C87 50%, #0F172A 100%)',
+      background: 'radial-gradient(circle at center, #160a03 0%, #090402 100%)',
       padding: isMobile ? '0.5rem' : '1rem',
       fontFamily: 'Inter, system-ui, -apple-system, sans-serif'
     },
@@ -118,10 +118,10 @@ const Contact = () => {
       width: '100%'
     },
     card: {
-      background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%)',
+      background: 'linear-gradient(135deg, rgba(15, 7, 2, 0.95) 0%, rgba(9, 4, 2, 0.95) 100%)',
       backdropFilter: 'blur(10px)',
       borderRadius: isMobile ? '1rem' : '1.5rem',
-      border: '1px solid rgba(124, 58, 237, 0.2)',
+      border: '1px solid rgba(255, 140, 60, 0.25)',
       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
       overflow: 'hidden',
       width: '100%'
@@ -129,7 +129,7 @@ const Contact = () => {
     header: {
       textAlign: 'center',
       padding: isMobile ? '2rem 1rem' : '3rem 1.5rem',
-      background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(219, 39, 119, 0.2) 100%)'
+      background: 'linear-gradient(135deg, rgba(255, 140, 60, 0.1) 0%, rgba(255, 90, 0, 0.05) 100%)'
     },
     title: {
       fontSize: isMobile ? '2rem' : '3rem',
@@ -139,7 +139,7 @@ const Contact = () => {
       lineHeight: '1.2'
     },
     accent: {
-      background: 'linear-gradient(45deg, #A78BFA, #F472B6)',
+      background: 'linear-gradient(45deg, #FFA030, #FF5A00)',
       backgroundClip: 'text',
       WebkitBackgroundClip: 'text',
       color: 'transparent'
@@ -169,11 +169,11 @@ const Contact = () => {
       order: isMobile ? 1 : 2
     },
     infoCard: {
-      background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(219, 39, 119, 0.1) 100%)',
+      background: 'linear-gradient(135deg, rgba(255, 140, 60, 0.08) 0%, rgba(255, 90, 0, 0.03) 100%)',
       backdropFilter: 'blur(10px)',
       borderRadius: '1rem',
       padding: isMobile ? '1.25rem' : '1.5rem',
-      border: '1px solid rgba(124, 58, 237, 0.2)',
+      border: '1px solid rgba(255, 140, 60, 0.25)',
       height: 'fit-content'
     },
     infoTitle: {
@@ -194,11 +194,11 @@ const Contact = () => {
       gap: isMobile ? '0.75rem' : '1rem',
       padding: isMobile ? '0.875rem' : '1rem',
       borderRadius: '0.75rem',
-      background: 'rgba(55, 65, 81, 0.5)',
+      background: 'rgba(26, 13, 5, 0.4)',
       textDecoration: 'none',
       color: 'inherit',
       transition: 'all 0.3s ease',
-      border: '1px solid rgba(75, 85, 99, 0.5)',
+      border: '1px solid rgba(255, 140, 60, 0.15)',
       width: '100%',
       boxSizing: 'border-box'
     },
@@ -206,7 +206,7 @@ const Contact = () => {
       width: isMobile ? '2.25rem' : '2.5rem',
       height: isMobile ? '2.25rem' : '2.5rem',
       borderRadius: '50%',
-      background: 'linear-gradient(45deg, #7C3AED, #E91E63)',
+      background: 'linear-gradient(45deg, #FF8C00, #FF5A00)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -228,7 +228,7 @@ const Contact = () => {
     },
     responseInfo: {
       paddingTop: '1.5rem',
-      borderTop: '1px solid rgba(75, 85, 99, 0.5)'
+      borderTop: '1px solid rgba(255, 140, 60, 0.2)'
     },
     responseIndicator: {
       display: 'flex',
@@ -238,11 +238,11 @@ const Contact = () => {
       color: '#9CA3AF'
     },
     formCard: {
-      background: 'linear-gradient(135deg, rgba(55, 65, 81, 0.5) 0%, rgba(30, 41, 59, 0.5) 100%)',
+      background: 'linear-gradient(135deg, rgba(26, 13, 5, 0.4) 0%, rgba(13, 7, 3, 0.4) 100%)',
       backdropFilter: 'blur(10px)',
       borderRadius: '1rem',
       padding: isMobile ? '1.25rem' : '1.5rem',
-      border: '1px solid rgba(75, 85, 99, 0.5)'
+      border: '1px solid rgba(255, 140, 60, 0.2)'
     },
     formGrid: {
       display: isMobile ? 'block' : 'grid',
@@ -257,8 +257,8 @@ const Contact = () => {
       width: '100%',
       padding: isMobile ? '1rem' : '0.75rem 1rem',
       borderRadius: '0.5rem',
-      border: '1px solid #4B5563',
-      background: 'rgba(17, 24, 39, 0.7)',
+      border: '1px solid rgba(255, 140, 60, 0.25)',
+      background: 'rgba(15, 8, 4, 0.7)',
       color: 'white',
       fontSize: isMobile ? '1rem' : '0.875rem',
       outline: 'none',
@@ -270,8 +270,8 @@ const Contact = () => {
       width: '100%',
       padding: isMobile ? '1rem' : '0.75rem 1rem',
       borderRadius: '0.5rem',
-      border: '1px solid #4B5563',
-      background: 'rgba(17, 24, 39, 0.7)',
+      border: '1px solid rgba(255, 140, 60, 0.25)',
+      background: 'rgba(15, 8, 4, 0.7)',
       color: 'white',
       fontSize: isMobile ? '1rem' : '0.875rem',
       outline: 'none',
@@ -302,7 +302,7 @@ const Contact = () => {
       padding: isMobile ? '1rem 1.5rem' : '0.75rem 1.5rem',
       borderRadius: '0.5rem',
       border: 'none',
-      background: 'linear-gradient(45deg, #7C3AED, #E91E63)',
+      background: 'linear-gradient(45deg, #FF8C00, #FF5A00)',
       color: 'white',
       fontWeight: '600',
       fontSize: isMobile ? '1rem' : '0.875rem',
@@ -317,9 +317,9 @@ const Contact = () => {
     emailBtn: {
       padding: isMobile ? '1rem' : '0.75rem 1rem',
       borderRadius: '0.5rem',
-      border: '1px solid rgba(124, 58, 237, 0.5)',
+      border: '1px solid rgba(255, 140, 60, 0.5)',
       background: 'transparent',
-      color: '#A78BFA',
+      color: '#FFA030',
       fontSize: isMobile ? '1rem' : '0.875rem',
       cursor: 'pointer',
       display: 'flex',
@@ -412,14 +412,14 @@ const Contact = () => {
                       }}
                       onFocus={(e) => {
                         if (!errors.name) {
-                          e.target.style.borderColor = '#7C3AED';
-                          e.target.style.boxShadow = '0 0 0 2px rgba(124, 58, 237, 0.2)';
+                          e.currentTarget.style.borderColor = '#FF8C00';
+                          e.currentTarget.style.boxShadow = '0 0 0 2px rgba(255, 140, 60, 0.2)';
                         }
                       }}
                       onBlur={(e) => {
                         if (!errors.name) {
-                          e.target.style.borderColor = '#4B5563';
-                          e.target.style.boxShadow = 'none';
+                          e.currentTarget.style.borderColor = 'rgba(255, 140, 60, 0.25)';
+                          e.currentTarget.style.boxShadow = 'none';
                         }
                       }}
                     />
@@ -439,14 +439,14 @@ const Contact = () => {
                       }}
                       onFocus={(e) => {
                         if (!errors.email) {
-                          e.target.style.borderColor = '#7C3AED';
-                          e.target.style.boxShadow = '0 0 0 2px rgba(124, 58, 237, 0.2)';
+                          e.currentTarget.style.borderColor = '#FF8C00';
+                          e.currentTarget.style.boxShadow = '0 0 0 2px rgba(255, 140, 60, 0.2)';
                         }
                       }}
                       onBlur={(e) => {
                         if (!errors.email) {
-                          e.target.style.borderColor = '#4B5563';
-                          e.target.style.boxShadow = 'none';
+                          e.currentTarget.style.borderColor = 'rgba(255, 140, 60, 0.25)';
+                          e.currentTarget.style.boxShadow = 'none';
                         }
                       }}
                     />
@@ -467,14 +467,14 @@ const Contact = () => {
                     }}
                     onFocus={(e) => {
                       if (!errors.subject) {
-                        e.target.style.borderColor = '#7C3AED';
-                        e.target.style.boxShadow = '0 0 0 2px rgba(124, 58, 237, 0.2)';
+                        e.currentTarget.style.borderColor = '#FF8C00';
+                        e.currentTarget.style.boxShadow = '0 0 0 2px rgba(255, 140, 60, 0.2)';
                       }
                     }}
                     onBlur={(e) => {
                       if (!errors.subject) {
-                        e.target.style.borderColor = '#4B5563';
-                        e.target.style.boxShadow = 'none';
+                        e.currentTarget.style.borderColor = 'rgba(255, 140, 60, 0.25)';
+                        e.currentTarget.style.boxShadow = 'none';
                       }
                     }}
                   />
@@ -494,14 +494,14 @@ const Contact = () => {
                     }}
                     onFocus={(e) => {
                       if (!errors.message) {
-                        e.target.style.borderColor = '#7C3AED';
-                        e.target.style.boxShadow = '0 0 0 2px rgba(124, 58, 237, 0.2)';
+                        e.currentTarget.style.borderColor = '#FF8C00';
+                        e.currentTarget.style.boxShadow = '0 0 0 2px rgba(255, 140, 60, 0.2)';
                       }
                     }}
                     onBlur={(e) => {
                       if (!errors.message) {
-                        e.target.style.borderColor = '#4B5563';
-                        e.target.style.boxShadow = 'none';
+                        e.currentTarget.style.borderColor = 'rgba(255, 140, 60, 0.25)';
+                        e.currentTarget.style.boxShadow = 'none';
                       }
                     }}
                   />
@@ -521,14 +521,14 @@ const Contact = () => {
                     }}
                     onMouseEnter={(e) => {
                       if (status === 'idle') {
-                        e.target.style.background = 'linear-gradient(45deg, #6D28D9, #DB2777)';
-                        e.target.style.transform = 'scale(1.02)';
+                        e.currentTarget.style.background = 'linear-gradient(45deg, #FFA030, #FF7730)';
+                        e.currentTarget.style.transform = 'scale(1.02)';
                       }
                     }}
                     onMouseLeave={(e) => {
                       if (status === 'idle') {
-                        e.target.style.background = 'linear-gradient(45deg, #7C3AED, #E91E63)';
-                        e.target.style.transform = 'scale(1)';
+                        e.currentTarget.style.background = 'linear-gradient(45deg, #FF8C00, #FF5A00)';
+                        e.currentTarget.style.transform = 'scale(1)';
                       }
                     }}
                   >
@@ -590,19 +590,20 @@ const Contact = () => {
                         href={method.href}
                         style={styles.contactItem}
                         target={method.href.startsWith('http') ? '_blank' : undefined}
+                        rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                         onMouseEnter={(e) => {
-                          e.target.style.backgroundColor = 'rgba(124, 58, 237, 0.2)';
-                          e.target.style.borderColor = 'rgba(124, 58, 237, 0.5)';
-                          e.target.style.transform = 'translateY(-2px)';
+                          e.currentTarget.style.backgroundColor = 'rgba(255, 140, 60, 0.12)';
+                          e.currentTarget.style.borderColor = 'rgba(255, 140, 60, 0.45)';
+                          e.currentTarget.style.transform = 'translateY(-2px)';
                         }}
                         onMouseLeave={(e) => {
-                          e.target.style.backgroundColor = 'rgba(55, 65, 81, 0.5)';
-                          e.target.style.borderColor = 'rgba(75, 85, 99, 0.5)';
-                          e.target.style.transform = 'translateY(0)';
+                          e.currentTarget.style.backgroundColor = 'rgba(26, 13, 5, 0.4)';
+                          e.currentTarget.style.borderColor = 'rgba(255, 140, 60, 0.15)';
+                          e.currentTarget.style.transform = 'translateY(0)';
                         }}
                       >
                         <div style={styles.iconWrapper}>
-                          <Icon size={isMobile ? 16 : 18} />
+                           <Icon size={isMobile ? 16 : 18} />
                         </div>
                         <div style={{ flex: 1, minWidth: 0 }}>
                           <div style={styles.contactLabel}>{method.label}</div>
@@ -615,7 +616,7 @@ const Contact = () => {
 
                 <div style={styles.responseInfo}>
                   <div style={styles.responseIndicator}>
-                    <Clock size={16} style={{ color: '#A78BFA' }} />
+                    <Clock size={16} style={{ color: '#FFA030' }} />
                     <span>Usually responds within 24 hours</span>
                   </div>
                 </div>

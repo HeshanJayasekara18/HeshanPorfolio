@@ -1,11 +1,11 @@
-/* About Me Section */
 .about-section {
   position: relative;
   min-height: 100vh;
   padding: 6rem 0;
-  background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F0F23 100%);
+  background: radial-gradient(ellipse at 50% 30%, #160a03 0%, #090402 100%); /* Matches orange-mix theme */
   color: white;
   overflow: hidden;
+  border-top: 1px solid rgba(255, 90, 0, 0.05);
 }
 
 .about-container {
@@ -25,10 +25,10 @@
 .section-badge {
   display: inline-block;
   padding: 0.5rem 1.5rem;
-  background: rgba(124, 58, 237, 0.2);
-  border: 1px solid rgba(124, 58, 237, 0.3);
+  background: rgba(255, 90, 0, 0.15);
+  border: 1px solid rgba(255, 140, 60, 0.35);
   border-radius: 50px;
-  color: #A78BFA;
+  color: #FFA030;
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -44,7 +44,7 @@
 }
 
 .title-gradient {
-  background: linear-gradient(45deg, #A78BFA, #F472B6, #60A5FA);
+  background: linear-gradient(45deg, #FFA030, #FF5A00, #E64A19);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -93,16 +93,16 @@
   height: 350px;
   border-radius: 2rem;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(236, 72, 153, 0.2));
-  border: 3px solid rgba(167, 139, 250, 0.3);
-  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3);
+  background: linear-gradient(135deg, rgba(255, 90, 0, 0.2), rgba(255, 160, 50, 0.2));
+  border: 3px solid rgba(255, 140, 60, 0.35);
+  box-shadow: 0 20px 40px rgba(255, 90, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 .image-wrapper:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(124, 58, 237, 0.4);
-  border-color: rgba(167, 139, 250, 0.5);
+  box-shadow: 0 30px 60px rgba(255, 90, 0, 0.45);
+  border-color: rgba(255, 140, 60, 0.6);
 }
 
 .about-image {
@@ -123,8 +123,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(236, 72, 153, 0.3));
-  color: #A78BFA;
+  background: linear-gradient(135deg, rgba(255, 90, 0, 0.3), rgba(255, 160, 50, 0.3));
+  color: #FFA030;
   text-align: center;
   gap: 1rem;
 }
@@ -146,7 +146,7 @@
   transform: translate(-50%, -50%);
   width: 300px;
   height: 300px;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(236, 72, 153, 0.3));
+  background: linear-gradient(135deg, rgba(255, 90, 0, 0.35), rgba(255, 160, 50, 0.25));
   border-radius: 50%;
   filter: blur(60px);
   z-index: -1;
@@ -171,10 +171,10 @@
 }
 
 .about-text {
-  background: rgba(26, 26, 46, 0.3);
+  background: rgba(20, 10, 5, 0.35);
   padding: 2.5rem;
   border-radius: 1.5rem;
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  border: 1px solid rgba(255, 140, 60, 0.25);
   backdrop-filter: blur(10px);
 }
 
@@ -182,7 +182,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  background: linear-gradient(45deg, #A78BFA, #F472B6);
+  background: linear-gradient(45deg, #FFA030, #FF5A00);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -213,19 +213,18 @@
   margin-left: 200px;
 }
 .interests-section {
-  background: rgba(26, 26, 46, 0.3);
+  background: rgba(20, 10, 5, 0.35);
   padding: 2.5rem;
   border-radius: 1.5rem;
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  border: 1px solid rgba(255, 140, 60, 0.25);
   backdrop-filter: blur(10px);
-  
 }
 
 .interests-title {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  background: linear-gradient(45deg, #A78BFA, #F472B6);
+  background: linear-gradient(45deg, #FFA030, #FF5A00);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -242,8 +241,8 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 1.5rem;
-  background: rgba(124, 58, 237, 0.1);
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  background: rgba(255, 90, 0, 0.08);
+  border: 1px solid rgba(255, 140, 60, 0.25);
   border-radius: 50px;
   transition: all 0.3s ease;
   opacity: 0;
@@ -258,9 +257,9 @@
 }
 
 .interest-item:hover {
-  background: rgba(124, 58, 237, 0.2);
+  background: rgba(255, 90, 0, 0.15);
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 5px 20px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 5px 20px rgba(255, 90, 0, 0.35);
 }
 
 .interest-icon {
@@ -287,7 +286,7 @@
   left: -10%;
   width: 30rem;
   height: 30rem;
-  background: rgba(124, 58, 237, 0.1);
+  background: rgba(255, 90, 0, 0.08);
   border-radius: 50%;
   filter: blur(3rem);
   animation: blobFloat 8s ease-in-out infinite;
@@ -299,7 +298,7 @@
   right: -10%;
   width: 25rem;
   height: 25rem;
-  background: rgba(236, 72, 153, 0.1);
+  background: rgba(255, 160, 50, 0.08);
   border-radius: 50%;
   filter: blur(3rem);
   animation: blobFloat 8s ease-in-out infinite 2s;
@@ -312,7 +311,7 @@
   transform: translate(-50%, -50%);
   width: 20rem;
   height: 20rem;
-  background: rgba(96, 165, 250, 0.1);
+  background: rgba(200, 50, 0, 0.06);
   border-radius: 50%;
   filter: blur(3rem);
   animation: blobFloat 8s ease-in-out infinite 4s;

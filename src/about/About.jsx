@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './About.css';
-import myimg2 from '../images/my img2.jpg'; // Ensure this path is correct
+import aboutPhoto from '../images/myaboutimg.png'; // Updated to use requested myaboutimg.png
 
 const About = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -61,7 +61,7 @@ const About = () => {
               <div className="image-wrapper">
                 {/* Replace with your actual image */}
                 <img 
-                  src= {myimg2 }
+                  src={aboutPhoto}
                   alt="Heshan Jayasekara" 
                   className="about-image"
                   onError={(e) => {
@@ -86,8 +86,8 @@ const About = () => {
             <div className="about-text">
               <h3 className="about-subtitle-text">Who I Am</h3>
               <p className="about-paragraph">
-                I'm Heshan Jayasekara, an undergraduate student at SLIIT pursuing BSc (Hons) in Information Technology, 
-                specializing in Software Engineering. I'm passionate about creating innovative digital solutions and 
+                I'm Heshan Jayasekara, a passionate Software Engineer and 4th year undergraduate student at SLIIT pursuing BSc (Hons) in Information Technology, 
+                specializing in Software Engineering. I'm dedicated to creating innovative digital solutions and 
                 building the future through code.
               </p>
               <p className="about-paragraph">

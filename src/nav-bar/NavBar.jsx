@@ -28,7 +28,29 @@ const NavBar = () => {
               scrollToSection('home');
             }}
           >
-            Home
+            HOME <svg className="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+
+          <a 
+            href="#about"
+            className="nav-link"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('about');
+            }}
+          >
+            ABOUT US
+          </a>
+
+          <a 
+            href="#services"
+            className="nav-link"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('services');
+            }}
+          >
+            SERVICES <svg className="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </a>
 
           <a 
@@ -39,18 +61,18 @@ const NavBar = () => {
               scrollToSection('projects');
             }}
           >
-            Projects
+            PROJECT <svg className="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </a>
           
           <a 
-            href="#about"
+            href="#blog"
             className="nav-link"
             onClick={(e) => {
               e.preventDefault();
-              scrollToSection('about');
+              scrollToSection('blog');
             }}
           >
-            About
+            BLOG <svg className="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </a>
           
           <a 
@@ -61,7 +83,7 @@ const NavBar = () => {
               scrollToSection('contact');
             }}
           >
-            Contact
+            CONTACT
           </a>
         </div>
         <button
